@@ -19,7 +19,6 @@ import {
   NativeEventSubscription,
   PanResponder,
   Platform,
-  SafeAreaView,
   StatusBar,
   TouchableOpacity,
   View,
@@ -1022,7 +1021,7 @@ export default forwardRef<ActionSheetRef, ActionSheetProps>(
     return (
       <>
         {Platform.OS === 'ios' && !safeAreaInsets ? (
-          <SafeAreaView
+          <View
             pointerEvents="none"
             collapsable={false}
             onLayout={event => {
@@ -1043,7 +1042,7 @@ export default forwardRef<ActionSheetRef, ActionSheetProps>(
               backgroundColor: 'transparent',
             }}>
             <View />
-          </SafeAreaView>
+          </View>
         ) : null}
         {visible ? (
           <Root {...rootProps}>
